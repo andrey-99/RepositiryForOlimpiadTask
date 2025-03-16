@@ -8,7 +8,7 @@ public class DialogAboutError extends JDialog {
         this.message = message;
 
         this.setTitle("Ошибка");
-        this.setMinimumSize(new Dimension(500,120));
+        this.setMinimumSize(new Dimension(550,120));
         this.setLocationRelativeTo(null);
         this.setLayout(new GridBagLayout());
         this.setModal(true);

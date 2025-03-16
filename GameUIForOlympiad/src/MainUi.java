@@ -102,6 +102,7 @@ public class MainUi extends JFrame{
         pack();
 
         jMenuItemOpen.addActionListener(_ -> {
+            bufferedResultImg = null;
             String defaultPath = new File("files/example.png").getAbsolutePath();
             jFileChooser.setSelectedFile(new File(defaultPath));
             int returnFileChooser = jFileChooser.showOpenDialog(this);
@@ -117,7 +118,7 @@ public class MainUi extends JFrame{
                     jImgOriginal.repaint();
                     jImgResult.setIcon(new ImageIcon());
                 } catch (IOException ex) {
-                    new DialogAboutError("Ошибка при открытии файла. Возможно файл не существует в этой папке.");
+                    new DialogAboutError("Ошибка при открытии файла. Возможно такой файл не существует в этой папке.");
                 } catch (NullPointerException ex){
                     new DialogAboutError("Выберите изображения формата .png или .jpg!");
                 }
